@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet">
+    <link rel="preload" href="img/logo.png" as="image">
+    <link rel="shortcut icon" href="img/logo.png" type="image/jpg">
+    <title>Añadir contacto</title>
+</head>
+
+<body>
+
+    <header id="headerContacts">
+
+        <a id="home" href="index.php">
+            <img id="logo" src="img/logo.png" alt="">
+            <h1>Contactos</h1>
+        </a>
+
+        <form method="GET" action="search.php" id="searchBar">
+            <button type="submit"></button>
+            <input type="search" name="search" id="search" placeholder="Buscar..." onkeypress="search(value)">
+        </form>
+
+    </header>
+
+    <div class="main">
+
+        <div class="addTitle">
+            <h2>Añadir nuevo contacto:</h2>
+        </div>
+
+        <form id="personalData" action="add.php" method="post">
+
+            <!--
+                <div id="headerContainer">
+              
+                <button id="externalA" onmouseover="mouseHover()" onmouseout="mouseOut()" onclick="externalOpen()">
+                    <svg xmlns="http://www.w3.org/2000/svg" id="external" width="44" height="44" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="#33a2a2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6" />
+                        <path d="M11 13l9 -9" />
+                        <path d="M15 4h5v5" />
+                    </svg>
+                </button>
+            </div> 
+        -->
+
+
+            <div class="inputWrapper">
+                <label for="name">Nombre:</label>
+                <input class="input" type="text" name="name" id="name" placeholder="Nombre" required>
+            </div>
+            <br>
+            <div class="inputWrapper">
+                <label for="a_paterno">Apellido paterno:</label>
+                <input class="input" type="text" name="a_paterno" id="a_paterno" placeholder="Apellido paterno"
+                    required>
+            </div>
+            <br>
+            <div class="inputWrapper">
+                <label for="a_materno">Apellido materno:</label>
+                <input class="input" type="text" name="a_materno" id="a_materno" placeholder="Apellido materno"
+                    required>
+            </div>
+            <br>
+            <div class="inputWrapper">
+                <label for="phone">Teléfono:</label>
+                <input class="input" type="text" name="telefono" id="telefono" placeholder="Teléfono" maxlength="13"
+                    onkeyup="onlyPhoneLength(value)" required>
+            </div>
+            <br>
+            <div class="inputWrapper">
+                <label for="email">Email:</label>
+                <input class="input" type="email" name="email" id="email" placeholder="Email" required>
+            </div>
+            <br>
+            <div class="inputWrapper">
+                <label for="email2">Segundo Email:</label>
+                <input class="input" type="email" name="email2" id="email2" placeholder="Segundo Email">
+            </div>
+            <!-- input de eleccion para autocompletar el enlace de red social del input siguiente -->
+            <div class="inputWrapper">
+                <label for="socialSelect">Red social:</label>
+                <select class="input" name="socialSelect" id="socialSelect" onchange="socialLink(value)">
+                    <option value="ninguna">Ninguna</option>
+                    <option value="youtube">YouTube</option>
+                    <option value="reddit">Reddit</option>
+                    <option value="twitter">Twitter</option>
+                    <option value="twitch">Twitch</option>
+                    <option value="steam">Steam</option>
+                    <option value="github">GitHub</option>
+                    <option value="discord">Discord</option>
+                    <option value="facebook">Facebook</option>
+                    <option value="instagram">Instagram</option>
+                    <option value="snapchat">Snapchat</option>
+                    <option value="tiktok">TikTok</option>
+                    <option value="otro">Otro</option>
+                </select>
+            </div>
+            <div class="inputWrapper">
+                <label for="social">Usuario de la Red Social:</label>
+                <input class="input" type="text" name="social" id="social" placeholder="Red Social">
+            </div>
+            <br>
+            <div id="finalInputs">
+                <div class="inputWrapper">
+                    <input class="input" type="submit" value="Añadir">
+                </div>
+                <div id="trashContainer">
+                    <button id="trashButton" onclick="clean()">
+                        <svg xmlns="http://www.w3.org/2000/svg" id="trash" class="icon-tabler icon-tabler-trash"
+                            width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M4 7l16 0" />
+                            <path d="M10 11l0 6" />
+                            <path d="M14 11l0 6" />
+                            <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                            <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+
+    <a href="index.php" class="buttonNew">
+        <svg xmlns="http://www.w3.org/2000/svg" id="x" class="icon icon-tabler icon-tabler-x" width="44" height="44"
+            viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M18 6l-12 12" />
+            <path d="M6 6l12 12" />
+        </svg>
+    </a>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,367 @@
+:root {
+    --highlight: #33a2a2;
+    --highlight-hover: #199696;
+    --red: #e41313;
+}
+
+body {
+    font-family: "Mukta", Arial;
+}
+
+#headerContacts {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+
+}
+
+#headerContacts img {
+    margin: 0px 10px 0px 30px;
+    width: 40px;
+    height: 40px;
+    user-select: none;
+}
+
+#headerContacts h1 {
+    margin: 0px 30px 0px 0px;
+    font-size: 30px;
+    user-select: none;
+}
+
+#home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: black;
+}
+
+.addTitle {
+    margin-top: -30px;
+}
+
+#external {
+    display: block;
+}
+
+#externalHover {
+    display: none;
+}
+
+#externalA {
+    background-color: white;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.main {
+    padding: 0px 80px;
+    padding-top: 30px;
+}
+
+#personalData {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 40px 40px 40px;
+    border: 1px solid #393E46;
+    border-radius: 10px;
+}
+
+.inputWrapper {
+    flex: 1 0 calc(33% - 40px);
+    min-width: 250px;
+    margin-right: 40px;
+    box-sizing: border-box;
+}
+
+input {
+    width: 100%;
+    padding: 15px 0px 15px 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: 2px solid #ccc;
+    border-radius: 7px;
+    background: #f1f1f1;
+}
+
+input:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+input[type=submit] {
+    background-color: var(--highlight);
+    color: white;
+    padding: 15px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    width: 100%;
+}
+
+input[type=submit]:hover {
+    background-color: var(--highlight-hover);
+}
+
+#telefono::-webkit-inner-spin-button,
+#telefono::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#telefono {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+
+#socialSelect {
+    width: 100%;
+    padding: 15px 0px 15px 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: 2px solid #ccc;
+    border-radius: 7px;
+    background: #f1f1f1;
+}
+
+#socialSelect:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+#finalInputs {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+
+    /* justify-content: space-between; */
+    width: 100%;
+    margin-top: 20px;
+}
+
+#finalInputs input {
+    width: 30%;
+    font-size: 15px;
+}
+
+#trashContainer {
+    margin-left: 30px;
+}
+
+#trashButton {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background-color: white;
+}
+
+#trashButton:hover svg {
+    stroke: var(--red);
+}
+
+#trashButton svg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#trash {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 920px) {
+    .inputWrapper {
+        width: 100%;
+    }
+}
+
+/* index.html */
+
+.buttonNew {
+    z-index: 998;
+    position: fixed;
+    display: block;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--highlight);
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    transition: 0.5s;
+}
+
+.buttonNew:focus {
+    outline: none;
+}
+
+.buttonMove {
+    right: calc(50% + 20px);
+}
+
+.buttonNew:hover {
+    background-color: var(--highlight-hover);
+}
+
+.icon {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    transition: 0.5s;
+}
+
+#iframeNew {
+    z-index: 998;
+    position: fixed;
+    top: calc(5% - 40px);
+    right: -52%;
+    width: 50%;
+    height: 90%;
+    transition: 0.5s;
+    background-color: white;
+    border: 2px solid #393E46;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+/* Search */
+
+#searchBar {
+    color: #555;
+    display: flex;
+    padding-left: 5px;
+    margin: 0px 30px;
+    width: 600px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: #f1f1f1;
+}
+
+input[type="search"] {
+    border: none;
+    margin: 0;
+    display: inline-block;
+    font-size: 16px;
+}
+
+input[type="search"]::placeholder {
+    color: #bbb;
+    user-select: none;
+}
+
+#searchBar:focus-within {
+    outline: none;
+    background-color: #ddd;
+}
+
+input[type="search"]:focus {
+    outline: none;
+
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+    display: none;
+    appearance: none;
+}
+
+#searchBar button[type="submit"] {
+    overflow: hidden;
+    width: 40px;
+    padding: 0;
+    margin: 0;
+    border: 1px solid transparent;
+    border-radius: inherit;
+    background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat center;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+#searchBar button[type="submit"]:hover {
+    opacity: 1;
+}
+
+#datosContactos {
+    border-collapse: collapse;
+    width: 100%;
+    /* border: #33a2a2 2px solid; */
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+.dataText:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+th {
+    background-color: #f2f2f2;
+    user-select: none;
+}
+
+tr:hover {
+    background-color: #dddddd;
+}
+
+#copiedContainer {
+    position: fixed;
+    right: 50%;
+    bottom: 0px;
+    width: 200px;
+    height: 120px;
+    pointer-events: none;
+    z-index: 999;
+    margin: 0px;
+    transform: translate(50%, 0%);
+}
+
+#copiedContainer p {
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    transform: translate(0%, 70%);
+    font-size: 30px;
+    text-align: center;
+    transition: 0.5s;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    border: #ccc 2px solid;
+    border-radius: 100px;
+    background-color: #f1f1f1;
+}
+
+/* add.php */
+
+#center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
+    user-select: none;
+}
+
+#center span {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+
